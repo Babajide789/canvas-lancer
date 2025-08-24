@@ -31,11 +31,9 @@ export default function NavBar() {
                         <Link href="/faq" className="hover:text-red-600transition-colors">Faqs</Link>
 
                         <Link href="/contact">
-                            {/* <div className="flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-white font-semibold shadow hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400"> */}
                                 <button className="ml-4 rounded-full bg-red-500 px-6 py-2 text-white font-semibold shadow hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400">
                                     Contact Us
                                 </button>
-                            {/* </div> */}
                             
                         </Link>
                         
