@@ -26,78 +26,97 @@ export default function Offers() {
         </div>
 
         {/* Right Side - Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {/* Card 1 */}
-          <div className="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            <Image
-              src="/wireframing.png"
-              alt="UX/UI Image"
-              width={50}
-              height={50}
-              className="mx-auto sm:mx-0"
-            />
-            <h4 className="text-lg sm:text-xl font-semibold mb-2 mt-4">UI/UX</h4>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Crafting user-friendly and engaging interfaces that enhance
-              experience.
-            </p>
+          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
+            {/* Icon Badge */}
+            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
+              <Image
+                src="/wireframing.png"
+                alt="wireframing Image"
+                width={28}
+                height={28}
+              />
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg sm:text-xl font-semibold mb-2">UI/UX</h4>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Crafting user-friendly and engaging interfaces that enhance
+                experience.
+              </p>
+            </div>
           </div>
+
 
           {/* Card 2 */}
-          <div className="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            <Image
-              src="/mob-dev.png"
-              alt="Web Development Image"
-              width={50}
-              height={50}
-              className="mx-auto sm:mx-0"
-            />
-            <h4 className="text-lg sm:text-xl font-semibold mb-2 mt-4">
-              Web Development
-            </h4>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Building fast, responsive, and scalable websites tailored for your
-              brand.
-            </p>
+          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
+            {/* Icon Badge */}
+            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
+              <Image
+                src="/mob-dev.png"
+                alt="Web Development Image"
+                width={28}
+                height={28}
+              />
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg sm:text-xl font-semibold mb-2">Web Development</h4>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Building fast, responsive, and scalable websites tailored for your
+                        brand.
+              </p>
+            </div>
           </div>
+
 
           {/* Card 3 */}
-          <div className="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            <Image
-              src="/ux-ui.png"
-              alt="Mobile Apps Image"
-              width={50}
-              height={50}
-              className="mx-auto sm:mx-0"
-            />
-            <h4 className="text-lg sm:text-xl font-semibold mb-2 mt-4">
-              Mobile Apps
-            </h4>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Developing powerful mobile solutions that keep your audience
-              connected.
-            </p>
+          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
+            {/* Icon Badge */}
+            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
+              <Image
+                src="/ux-ui.png"
+                alt="Mobile Apps Image"
+                width={28}
+                height={28}
+              />
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg sm:text-xl font-semibold mb-2">Mobile Apps</h4>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Developing powerful mobile solutions that keep your audience
+                        connected.
+              </p>
+            </div>
           </div>
 
+
           {/* Card 4 */}
-          <div className="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            <Image
-              src="/speed.png"
-              alt="SEO & Marketing Image"
-              width={50}
-              height={50}
-              className="mx-auto sm:mx-0"
-            />
-            <h4 className="text-lg sm:text-xl font-semibold mb-2 mt-4">
-              SEO & Marketing
-            </h4>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Helping your brand get discovered online with smart SEO
-              strategies.
-            </p>
+          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
+            {/* Icon Badge */}
+            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
+              <Image
+                src="/speed.png"
+                alt="SEO & Marketing Image"
+                width={28}
+                height={28}
+              />
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg sm:text-xl font-semibold mb-2"> SEO & Marketing</h4>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Helping your brand get discovered online with smart SEO
+                        strategies.
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
+

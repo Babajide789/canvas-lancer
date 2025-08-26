@@ -1,67 +1,63 @@
 import Image from "next/image";
 
-
-
 export default function Contact() {
   return (
-    <section className="max-w-5xl mx-auto my-16 px-6">
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="text-center mb-8">
-                {/* Top Text */}
-                <p className="text-blue-600 font-semibold tracking-wide uppercase">
-                    Contact Us
-                </p>
+    <section className="max-w-6xl mx-auto my-16 px-4 sm:px-6 lg:px-12">
+      <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-10">
+        {/* HEADER */}
+        <div className="text-center mb-10">
+          <p className="text-blue-600 font-semibold tracking-wide uppercase text-sm sm:text-base">
+            Contact Us
+          </p>
 
-                {/* Heading */}
-                <h4 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                    Contact Us & We Can Work Together
-                </h4>
+          <h4 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
+            Contact Us & We Can Work Together
+          </h4>
 
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                    Have a project in mind or just want to say hello? Fill in the form
-                    below and we’ll get back to you as soon as possible.
-                </p>
-            </div>
-
-            {/* Content Wrapper */}
-            <div className="flex flex-col md:flex-row items-center gap-8">
-                {/* Form */}
-                <form className="flex-1 flex flex-col gap-4 text-left w-full">
-                    <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <textarea
-                    placeholder="Your Message"
-                    className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[150px]"
-                    ></textarea>
-                    <button
-                    type="submit"
-                    className="bg-red-500 px-6 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition"
-                    >
-                    Submit Message
-                    </button>
-                </form>
-
-                {/* Image */}
-                <div className="flex-1 flex justify-center md:justify-end">
-                    <Image
-                    src="/contact-frame.png"
-                    alt="Contact illustration"
-                    width={400}
-                    height={400}
-                    className="max-w-full h-auto object-contain"
-                    />
-                </div>
-            </div>
+          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+            Have a project in mind or just want to say hello? Fill in the form
+            below and we’ll get back to you as soon as possible.
+          </p>
         </div>
+
+        {/* CONTENT WRAPPER */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-12">
+          {/* FORM */}
+          <form className="flex-1 flex flex-col gap-4 w-full">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+            />
+            <textarea
+              placeholder="Your Message"
+              className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[150px] text-sm sm:text-base"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-red-500 px-6 py-3 rounded-xl text-white font-semibold hover:bg-red-600 transition text-sm sm:text-base"
+            >
+              Submit Message
+            </button>
+          </form>
+
+          {/* IMAGE */}
+          <div className="flex-1 flex justify-center md:justify-end">
+            <Image
+              src="/contact-frame.png"
+              alt="Contact illustration"
+              width={400}
+              height={400}
+              className="max-w-[250px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
