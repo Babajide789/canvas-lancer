@@ -11,7 +11,7 @@ export default function Portfolio () {
                 </p>
         
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
-                    Projects We Have Completed
+                    <span className="text-red-500">Projects</span> We Have Completed
                 </h3>
         
                 {/* FILTER BUTTONS */}

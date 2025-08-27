@@ -2,19 +2,24 @@ import Image from "next/image";
 
 export default function Offers() {
   return (
-    <section className="py-16 px-6 sm:px-10 lg:px-20 bg-gray-50">
+    <section className="py-16 px-6 sm:px-10 lg:px-20 bg-[#202020]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text */}
         <div className="space-y-6 text-center lg:text-left">
-          <p className="text-red-500 font-semibold uppercase tracking-wide text-sm sm:text-base">
-            What We Are Offering
+          <p className="text-white font-semibold uppercase tracking-wide text-sm sm:text-base">
+            What We Are <span className= "text-red-500" >Offering</span>
           </p>
 
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug">
-            <span className="text-red-500">Services</span> We Can Offer You!
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-white">
+            <span className="block">
+              <span className="text-red-500">Services</span> We Can
+            </span>
+            <span className="block">Offer You!</span>
           </h3>
 
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-lg mx-auto lg:mx-0">
+
+
+          <p className="text-white text-sm sm:text-base lg:text-lg max-w-lg mx-auto lg:mx-0">
             At Canvas Lancer, we provide creative and strategic solutions to
             elevate your brand. From user-focused design to seamless development
             and digital marketing, our services are tailored to deliver impact.
