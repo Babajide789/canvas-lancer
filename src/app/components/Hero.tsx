@@ -3,6 +3,7 @@ export default function Hero() {
   return (
     <section
       className="relative h-screen bg-cover bg-center bg-no-repeat"
+      id="home"
       style={{ backgroundImage: "url('/background-img.png')" }}
     >
       <div className="h-full flex flex-col items-center justify-center text-center bg-black/50 text-white px-4">

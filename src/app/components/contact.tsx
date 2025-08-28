@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <section className="max-w-6xl mx-auto my-16 px-4 sm:px-6 lg:px-12">
+    <section className="max-w-6xl mx-auto my-16 px-4 sm:px-6 lg:px-12" id="contact">
         <div className="bg-gray-200 rounded-2xl shadow-lg p-6 sm:p-10">
             {/* HEADER */}
             <div className="mb-10">
@@ -13,7 +13,7 @@ export default function Contact() {
                     <div className="w-[15%] h-[1px] bg-gray-300"></div>
 
                     {/* Text */}
-                    <p className="text-black-500 font-semibold tracking-wide uppercase text-sm sm:text-base whitespace-nowrap">
+                    <p className="text-red-500 font-semibold tracking-wide uppercase text-sm sm:text-base whitespace-nowrap">
                         Contact Us
                     </p>
                 </div>

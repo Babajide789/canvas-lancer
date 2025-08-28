@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="relative py-20 bg-gray-50">
+    <section className="relative py-20 bg-gray-50" id="about">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* LEFT SIDE IMAGE */}
             
@@ -40,9 +40,17 @@ export default function About() {
 
             {/* RIGHT SIDE TEXT */}
         <div className="space-y-6 text-center md:text-left">
-          <p className="text-red-600 font-semibold uppercase tracking-wide">
-            About Canvas Lancer
-          </p>
+          
+
+          <div className="flex items-center gap-4 mb-2 w-full">
+              {/* Line only 15% of container width */}
+              <div className="w-[15%] h-[1px] bg-gray-500"></div>
+
+              {/* Text */}
+              <p className="text-gray-500 font-semibold tracking-wide uppercase text-sm sm:text-base whitespace-nowrap">
+                <span className="text-red-500">About</span> Canvas Lancer
+              </p>
+            </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-gray-800">
             Introduction To The Best <br className="hidden sm:block" /> Digital

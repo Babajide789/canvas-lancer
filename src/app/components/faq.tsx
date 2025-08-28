@@ -10,26 +10,26 @@ import { motion } from "framer-motion";
 
 export default function FAQ() {
   return (
-    <div className="FAQ max-w-3xl mx-auto py-16 px-4">
+     <div className="FAQ max-w-3xl mx-auto py-16 px-4" id="faq">
         <div className="FAQ-top text-center mb-10">
                 
-        {/* Line only 15% of container width */}
-            <div className="flex items-center justify-center gap-4 mb-6">
-                {/* Left Line */}
-                <div className="w-[80px] h-[1px] bg-gray-300"></div>
+          {/* Line only 15% of container width */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            {/* Left Line */}
+            <div className="w-[80px] h-[1px] bg-gray-300"></div>
 
-                {/* Text */}
-                <p className="text-gray-800 font-semibold tracking-wide text-sm sm:text-base whitespace-nowrap">
-                    FAQs
-                </p>
+            {/* Text */}
+            <p className="text-gray-500 font-semibold tracking-wide text-sm sm:text-base whitespace-nowrap">
+              FAQs
+            </p>
 
-                {/* Right Line */}
-                <div className="w-[80px] h-[1px] bg-gray-300"></div>
-            </div>
+            {/* Right Line */}
+            <div className="w-[80px] h-[1px] bg-gray-300"></div>
+          </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 flex flex-col">
-                    Frequently Asked <span className="text-red-500">Questions</span>
-                </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 flex flex-col">
+              Frequently Asked <span className="text-red-500">Questions</span>
+            </h2>
 
         </div>
 

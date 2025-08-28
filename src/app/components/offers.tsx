@@ -2,13 +2,19 @@ import Image from "next/image";
 
 export default function Offers() {
   return (
-    <section className="py-16 px-6 sm:px-10 lg:px-20 bg-[#202020]">
+    <section className="py-16 px-6 sm:px-10 lg:px-20 bg-[#202020]" id="services">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text */}
         <div className="space-y-6 text-center lg:text-left">
-          <p className="text-white font-semibold uppercase tracking-wide text-sm sm:text-base">
-            What We Are <span className= "text-red-500" >Offering</span>
-          </p>
+          <div className="flex items-center gap-4 mb-2 w-full">
+              {/* Line only 15% of container width */}
+              <div className="w-[15%] h-[1px] bg-white"></div>
+
+              {/* Text */}
+              <p className="text-gray-200 font-semibold tracking-wide uppercase text-sm sm:text-base whitespace-nowrap">
+                What We Are <span className="text-red-500">Offering</span>
+              </p>
+            </div>
 
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-white">
             <span className="block">
