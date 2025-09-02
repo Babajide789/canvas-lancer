@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -41,6 +42,7 @@ export default function Feedback() {
               name: "Alexander Hipp",
               role: "CEO, BrightTech",
             },
+
             {
               text: "The team delivered exactly what we envisioned—clean, modern, and user-friendly. Couldn’t be happier!",
               img: "/michael-dam.jpg",
@@ -82,10 +84,12 @@ export default function Feedback() {
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image src={card.img} alt={card.name} fill className="object-cover" />
                 </div>
+
                 <div className="text-left">
                   <h5 className="font-semibold text-lg text-gray-900">{card.name}</h5>
                   <span className="text-sm text-gray-500">{card.role}</span>
                 </div>
+                
               </div>
             </motion.div>
           ))}

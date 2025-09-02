@@ -12,6 +12,7 @@ export default function About() {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
+
         {/* LEFT SIDE IMAGE */}
         <motion.div
           className="relative w-fit"
@@ -20,6 +21,7 @@ export default function About() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+
           {/* First Image */}
           <div className="relative w-[260px] h-[280px] sm:w-[320px] sm:h-[350px]">
             <Image
@@ -57,6 +59,7 @@ export default function About() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          
           {/* Heading Line */}
           <div className="flex items-center gap-4 mb-2 w-full justify-center md:justify-start">
             <div className="w-[15%] h-[1px] bg-gray-500"></div>
@@ -90,7 +93,9 @@ export default function About() {
           >
             Hire Us
           </motion.button>
+          
         </motion.div>
+        
       </motion.div>
     </section>
   );

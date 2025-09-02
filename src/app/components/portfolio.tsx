@@ -86,17 +86,17 @@ const fadeUp = {
         >
           {["/frame-1.png", "/frame-2.png", "/frame-3.png"].map((src, i) => (
             <motion.div
-  key={i}
-  variants={{
-    hidden: { opacity: 0, scale: 0.9, y: 30 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
-    },
-  }}
->
+              key={i}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9, y: 30 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  transition: { duration: 0.6, ease: "easeOut" as const },
+                },
+              }}
+            >
 
               <Image
                 src={src}
@@ -107,17 +107,17 @@ const fadeUp = {
               />
 
               {/* <Image
-  src={src}
-  alt={`Project ${i + 1}`}
-  width={300}
-  height={180}
-  className="
-    rounded-md shadow-sm 
-    hover:scale-105 transition-transform duration-300
-    w-full sm:w-[90%] md:w-[300px] 
-    h-auto object-cover mx-auto
-  "
-/> */}
+                src={src}
+                alt={`Project ${i + 1}`}
+                width={300}
+                height={180}
+                className="
+                  rounded-md shadow-sm 
+                  hover:scale-105 transition-transform duration-300
+                  w-full sm:w-[90%] md:w-[300px] 
+                  h-auto object-cover mx-auto
+                "
+              /> */}
 
             </motion.div>
           ))}
