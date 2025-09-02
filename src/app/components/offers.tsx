@@ -1,20 +1,33 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 }, // removed scale
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Offers() {
   return (
-    <section className="py-16 px-6 sm:px-10 lg:px-20 bg-[#202020]" id="services">
+    <section
+      className="py-16 px-6 sm:px-10 lg:px-20 bg-[#202020]"
+      id="services"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Text */}
-        <div className="space-y-6 text-center lg:text-left">
+        {/* Left Side - Text with animation */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="space-y-6 text-center lg:text-left"
+        >
           <div className="flex items-center gap-4 mb-2 w-full">
-              {/* Line only 15% of container width */}
-              <div className="w-[15%] h-[1px] bg-white"></div>
-
-              {/* Text */}
-              <p className="text-gray-200 font-semibold tracking-wide uppercase text-sm sm:text-base whitespace-nowrap">
-                What We Are <span className="text-red-500">Offering</span>
-              </p>
-            </div>
+            <div className="w-[15%] h-[1px] bg-white"></div>
+            <p className="text-gray-200 font-semibold tracking-wide uppercase text-sm sm:text-base whitespace-nowrap">
+              What We Are <span className="text-red-500">Offering</span>
+            </p>
+          </div>
 
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-white">
             <span className="block">
@@ -22,8 +35,6 @@ export default function Offers() {
             </span>
             <span className="block">Offer You!</span>
           </h3>
-
-
 
           <p className="text-white text-sm sm:text-base lg:text-lg max-w-lg mx-auto lg:mx-0">
             At Canvas Lancer, we provide creative and strategic solutions to
@@ -34,100 +45,55 @@ export default function Offers() {
           <button className="px-6 py-3 bg-red-500 text-white rounded-xl shadow-lg hover:bg-red-600 transition text-sm sm:text-base">
             Hire Us
           </button>
-        </div>
+        </motion.div>
 
         {/* Right Side - Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {/* Card 1 */}
-          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            {/* Icon Badge */}
-            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
-              <Image
-                src="/wireframing.png"
-                alt="wireframing Image"
-                width={28}
-                height={28}
-              />
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-lg sm:text-xl font-semibold mb-2">UI/UX</h4>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Crafting user-friendly and engaging interfaces that enhance
-                experience.
-              </p>
-            </div>
-          </div>
-
-
-          {/* Card 2 */}
-          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            {/* Icon Badge */}
-            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
-              <Image
-                src="/mob-dev.png"
-                alt="Web Development Image"
-                width={28}
-                height={28}
-              />
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-lg sm:text-xl font-semibold mb-2">Web Development</h4>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Building fast, responsive, and scalable websites tailored for your
-                        brand.
-              </p>
-            </div>
-          </div>
-
-
-          {/* Card 3 */}
-          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            {/* Icon Badge */}
-            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
-              <Image
-                src="/ux-ui.png"
-                alt="Mobile Apps Image"
-                width={28}
-                height={28}
-              />
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-lg sm:text-xl font-semibold mb-2">Mobile Apps</h4>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Developing powerful mobile solutions that keep your audience
-                        connected.
-              </p>
-            </div>
-          </div>
-
-
-          {/* Card 4 */}
-          <div className="relative p-6 bg-white rounded-2xl shadow hover:shadow-lg transition text-center sm:text-left">
-            {/* Icon Badge */}
-            <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
-              <Image
-                src="/speed.png"
-                alt="SEO & Marketing Image"
-                width={28}
-                height={28}
-              />
-            </div>
-
-            <div className="mt-8">
-              <h4 className="text-lg sm:text-xl font-semibold mb-2"> SEO & Marketing</h4>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Helping your brand get discovered online with smart SEO
-                        strategies.
-              </p>
-            </div>
-          </div>
-
-        </div>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ staggerChildren: 0.2 }}
+        >
+          {[
+            {
+              img: "/wireframing.png",
+              title: "UI/UX",
+              desc: "Crafting user-friendly and engaging interfaces that enhance experience.",
+            },
+            {
+              img: "/mob-dev.png",
+              title: "Web Development",
+              desc: "Building fast, responsive, and scalable websites tailored for your brand.",
+            },
+            {
+              img: "/ux-ui.png",
+              title: "Mobile Apps",
+              desc: "Developing powerful mobile solutions that keep your audience connected.",
+            },
+            {
+              img: "/speed.png",
+              title: "SEO & Marketing",
+              desc: "Helping your brand get discovered online with smart SEO strategies.",
+            },
+          ].map((card, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="relative p-6 bg-white rounded-2xl shadow hover:shadow-xl transition-transform hover:-translate-y-2"
+            >
+              <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
+                <Image src={card.img} alt={card.title} width={28} height={28} />
+              </div>
+              <div className="mt-8">
+                <h4 className="text-lg sm:text-xl font-semibold mb-2">{card.title}</h4>
+                <p className="text-gray-600 text-sm sm:text-base">{card.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
-

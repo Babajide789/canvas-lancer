@@ -36,7 +36,7 @@ export default function About() {
             className="absolute top-28 left-32 sm:top-40 sm:left-48 w-[200px] h-[180px] sm:w-[260px] sm:h-[240px]"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <Image
@@ -54,7 +54,7 @@ export default function About() {
           className="space-y-6 text-center md:text-left"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Heading Line */}

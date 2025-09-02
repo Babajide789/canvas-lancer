@@ -121,7 +121,7 @@ export default function NavBar() {
               custom={6}
             >
               <a href="#contact" onClick={() => setIsOpen(false)}>
-                <button className="w-full rounded-full bg-red-500 px-6 py-2 text-white font-semibold shadow hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400">
+                <button className="w-full cursor-pointer rounded-full bg-red-500 px-6 py-2 text-white font-semibold shadow hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400">
                   Contact Us
                 </button>
               </a>
