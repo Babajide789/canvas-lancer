@@ -3,11 +3,19 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50 }, // removed scale
+  hidden: { opacity: 0, y: 50 }, 
   visible: { opacity: 1, y: 0 },
 };
 
 export default function Offers() {
+  // Smooth scroll function
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="py-16 px-6 sm:px-10 lg:px-20 bg-[#202020]"
@@ -42,7 +50,11 @@ export default function Offers() {
             and digital marketing, our services are tailored to deliver impact.
           </p>
 
-          <button className="px-6 py-3 bg-red-500 text-white rounded-xl shadow-lg hover:bg-red-600 transition text-sm sm:text-base">
+          {/* Hire Us button scrolls to Contact */}
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="px-6 py-3 bg-red-500 text-white rounded-xl shadow-lg hover:bg-red-600 transition text-sm sm:text-base cursor-pointer"
+          >
             Hire Us
           </button>
         </motion.div>
@@ -87,8 +99,12 @@ export default function Offers() {
                 <Image src={card.img} alt={card.title} width={28} height={28} />
               </div>
               <div className="mt-8">
-                <h4 className="text-lg sm:text-xl font-semibold mb-2">{card.title}</h4>
-                <p className="text-gray-600 text-sm sm:text-base">{card.desc}</p>
+                <h4 className="text-lg sm:text-xl font-semibold mb-2">
+                  {card.title}
+                </h4>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  {card.desc}
+                </p>
               </div>
             </motion.div>
           ))}

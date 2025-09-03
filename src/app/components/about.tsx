@@ -2,7 +2,16 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+
 export default function About() {
+  // Smooth scroll handler
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative py-20 bg-gray-50" id="about">
       <motion.div
@@ -12,7 +21,6 @@ export default function About() {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-
         {/* LEFT SIDE IMAGE */}
         <motion.div
           className="relative w-fit"
@@ -21,7 +29,6 @@ export default function About() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-
           {/* First Image */}
           <div className="relative w-[260px] h-[280px] sm:w-[320px] sm:h-[350px]">
             <Image
@@ -59,7 +66,6 @@ export default function About() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          
           {/* Heading Line */}
           <div className="flex items-center gap-4 mb-2 w-full justify-center md:justify-start">
             <div className="w-[15%] h-[1px] bg-gray-500"></div>
@@ -89,13 +95,12 @@ export default function About() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+            className="px-8 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+            onClick={() => handleScroll("contact")}
           >
             Hire Us
           </motion.button>
-          
         </motion.div>
-        
       </motion.div>
     </section>
   );
