@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-
 export default function About() {
   // Smooth scroll handler
   const handleScroll = (id: string) => {
@@ -18,40 +17,48 @@ export default function About() {
         className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        {/* LEFT SIDE IMAGE */}
+        {/* LEFT SIDE IMAGES */}
         <motion.div
           className="relative w-fit"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          {/* First Image */}
+          {/* First Image (priority) */}
           <div className="relative w-[260px] h-[280px] sm:w-[320px] sm:h-[350px]">
             <Image
               src="/about-img-2.png"
-              alt="About Image 1"
+              alt="Team working"
               fill
+              priority
+              sizes="(max-width: 768px) 80vw,
+                     (max-width: 1200px) 50vw,
+                     33vw"
               className="rounded-2xl shadow-xl object-cover"
             />
             <div className="absolute -top-6 -left-6 w-16 h-16 sm:w-24 sm:h-24 bg-red-100 rounded-3xl -z-10"></div>
           </div>
 
-          {/* Second Image */}
+          {/* Second Image (lazy) */}
           <motion.div
             className="absolute top-28 left-32 sm:top-40 sm:left-48 w-[200px] h-[180px] sm:w-[260px] sm:h-[240px]"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
             <Image
               src="/about-img-1.png"
-              alt="About Image 2"
+              alt="Office work"
               fill
+              loading="lazy"
+              sizes="(max-width: 768px) 60vw,
+                     (max-width: 1200px) 40vw,
+                     25vw"
               className="rounded-2xl shadow-lg object-cover"
             />
             <div className="absolute bottom-4 -right-4 w-14 h-14 sm:w-20 sm:h-20 bg-red-200 rounded-full -z-10"></div>
@@ -64,7 +71,7 @@ export default function About() {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           {/* Heading Line */}
           <div className="flex items-center gap-4 mb-2 w-full justify-center md:justify-start">
@@ -85,13 +92,10 @@ export default function About() {
             At Canvas Lancer, we blend creativity and strategy to craft impactful
             digital experiences. From UI/UX to mobile apps, web development, and
             SEO, we help brands stand out with solutions that inspire, engage,
-            and drive results. We believe in design with purpose — where every
-            detail enhances user experience and every solution fuels growth. With
-            a passionate team and a forward-thinking approach, we partner with
-            you to turn bold ideas into lasting success.
+            and drive results.
           </p>
 
-          {/* Button */}
+          {/* CTA Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
