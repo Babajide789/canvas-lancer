@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 // Animation Variants
 const fadeUp = {
@@ -21,6 +23,44 @@ const staggerContainer = {
 };
 
 export default function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
+  // Handle input changes
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submit
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const toastId = toast.loading("Sending message...");
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        toast.success("✅ Message sent successfully!", { id: toastId });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast.error("❌ Failed to send message. Try again.", { id: toastId });
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("⚠️ Something went wrong.", { id: toastId });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       className="max-w-6xl mx-auto my-16 px-4 sm:px-6 lg:px-12"
@@ -59,34 +99,56 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-12">
           {/* FORM */}
           <motion.form
+            onSubmit={handleSubmit}
             className="flex-1 flex flex-col gap-4 w-full"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {["Your Name", "Your Email"].map((placeholder, i) => (
-              <motion.input
-                key={i}
-                type={placeholder.includes("Email") ? "email" : "text"}
-                placeholder={placeholder}
-                className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base bg-white"
-                variants={fadeUp}
-              />
-            ))}
+            <motion.input
+              name="name"
+              type="text"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base bg-white"
+              variants={fadeUp}
+              required
+            />
+
+            <motion.input
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base bg-white"
+              variants={fadeUp}
+              required
+            />
 
             <motion.textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
               placeholder="Your Message"
               className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[150px] text-sm sm:text-base bg-white"
               variants={fadeUp}
+              required
             ></motion.textarea>
 
             <motion.button
               type="submit"
-              className="bg-red-500 px-6 py-3 rounded-xl text-white font-semibold hover:bg-red-600 transition text-sm sm:text-base cursor-pointer"
+              disabled={loading}
+              className={`px-6 py-3 rounded-xl text-white font-semibold transition text-sm sm:text-base cursor-pointer ${
+                loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-red-500 hover:bg-red-600"
+              }`}
               variants={fadeUp}
             >
-              Submit Message
+              {loading ? "Sending..." : "Submit Message"}
             </motion.button>
           </motion.form>
 
@@ -100,7 +162,7 @@ export default function Contact() {
               alt="Contact illustration"
               width={400}
               height={400}
-              priority={false} // 🚀 not critical for LCP
+              priority={false}
               className="
                 max-w-[250px] 
                 sm:max-w-[320px] 
