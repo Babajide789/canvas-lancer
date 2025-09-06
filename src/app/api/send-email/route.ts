@@ -11,9 +11,9 @@ export async function POST(req: Request) {
   }
 
   try {
-    // 1️⃣ Send auto reply to the user
+    // SEND REPLY TO USERS
     await resend.emails.send({
-      from: "Canvas Lancer <onboarding@resend.dev>", // Or your custom domain
+      from: "Canvas Lancer <onboarding@resend.dev>",
       to: email,
       subject: "Thank you for reaching out!",
       html: `

@@ -8,7 +8,7 @@ export default function Footer() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowButton(window.scrollY > 300); // Show button after scrolling 300px
+      setShowButton(window.scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="relative border-t border-gray-800 bg-gray-900 py-10 text-gray-400">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-6 text-center md:text-left">
         
-        {/* Logo + About */}
+        {/* LOGO + ABOUT */}
         <div>
           <h3 className="text-xl font-bold text-white mb-3 flex items-center justify-center md:justify-start gap-2">
             <Image
@@ -38,7 +38,7 @@ export default function Footer() {
             We bring your ideas to life with clean design and modern code.
           </p>
 
-          {/* ✅ Social Media Icons */}
+          {/* SM ICONS */}
           <div className="flex justify-center md:justify-start gap-4 mt-4">
             <a href="#" className="hover:text-primary rounded-full p-1 bg-red-500 text-white">
               <Facebook size={18} />
@@ -106,7 +106,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 🔝 Scroll to Top Button */}
+      {/* Scroll to Top Button */}
       {showButton && (
         <button
           onClick={scrollToTop}

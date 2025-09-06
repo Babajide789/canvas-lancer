@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-// Animation Variants
+
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -26,14 +26,14 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  // Handle input changes
+  // HANDLE INPUTS 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Handle form submit
+  // HANDLE FORM SUBMIT
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -95,7 +95,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* CONTENT WRAPPER */}
+      
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-12">
           {/* FORM */}
           <motion.form

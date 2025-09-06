@@ -51,11 +51,11 @@ export default function Offers() {
       id="services"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Text with animation */}
+        {/* LEFT SIDE TEXT */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }} // ✅ animate once for performance
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-6 text-center lg:text-left"
         >
@@ -79,7 +79,7 @@ export default function Offers() {
             and digital marketing, our services are tailored to deliver impact.
           </p>
 
-          {/* Hire Us button scrolls to Contact */}
+        
           <button
             onClick={() => scrollToSection("contact")}
             className="px-6 py-3 bg-red-500 text-white rounded-xl shadow-lg hover:bg-red-600 transition text-sm sm:text-base cursor-pointer"
@@ -88,12 +88,12 @@ export default function Offers() {
           </button>
         </motion.div>
 
-        {/* Right Side - Service Cards */}
+        {/* RIGHT SIDE CARDS */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 gap-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} // ✅ animate once
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ staggerChildren: 0.2 }}
         >
           {services.map((card, index) => (
@@ -103,14 +103,14 @@ export default function Offers() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="relative p-6 bg-white rounded-2xl shadow hover:shadow-xl transition-transform hover:-translate-y-2"
             >
-              {/* ✅ Fixed aspect ratio to reduce CLS */}
+             
               <div className="absolute -top-6 left-1/2 sm:left-6 transform -translate-x-1/2 sm:translate-x-0 w-12 h-12 bg-red-500 flex items-center justify-center rounded-full shadow-md">
                 <Image
                   src={card.img}
                   alt={card.title}
                   width={28}
                   height={28}
-                  loading="lazy" // ✅ Lazy load
+                  loading="lazy"
                 />
               </div>
               <div className="mt-8">

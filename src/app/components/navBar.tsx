@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // ✅ Typed animation variants
+
   const linkVariants = {
     hidden: { opacity: 0, x: 40 },
     visible: (i: number) => ({
@@ -32,7 +32,7 @@ export default function NavBar() {
     <header className="fixed top-0 left-0 w-full z-50 border-b bg-black/90 backdrop-blur shadow-md text-white">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* Logo */}
+        {/* LOGO */}
         <a
           href="#home"
           className="flex items-center gap-2 text-xl font-bold hover:text-red-600 transition-colors"
@@ -47,7 +47,7 @@ export default function NavBar() {
           Canvas Lancer
         </a>
 
-        {/* Desktop Nav */}
+        {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8 text-base font-medium">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="hover:text-red-600 transition-colors">
@@ -62,7 +62,6 @@ export default function NavBar() {
           </a>
         </div>
 
-        {/* Animated Hamburger / X */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="relative z-50 flex flex-col justify-center items-center w-8 h-8 md:hidden focus:outline-none"
@@ -85,7 +84,7 @@ export default function NavBar() {
         </button>
       </nav>
 
-      {/* Mobile Dropdown Menu */}
+      {/* MOBILE MENU DROPDOWN*/}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -107,7 +106,7 @@ export default function NavBar() {
                 <a
                   href={link.href}
                   className="block hover:text-red-600"
-                  onClick={() => setIsOpen(false)} // close menu after click
+                  onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </a>

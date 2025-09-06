@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <NavBar/>
         {children}
-                <Toaster position="top-right" reverseOrder={false} />
+          <Toaster position="top-right" reverseOrder={false} />
         <Footer/>
       </body>
     </html>

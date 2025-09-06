@@ -5,9 +5,8 @@ import Image from "next/image";
 import { useMemo } from "react";
 
 export default function Feedback() {
-  // ✅ Memoize feedback cards
-  const feedbacks = useMemo(
-    () => [
+ 
+  const feedbacks = useMemo( () => [
       {
         text: "Canvas Lancer completely transformed our website. We’ve seen a huge boost in engagement since the redesign.",
         img: "/alexander-hipp.jpg",
@@ -37,7 +36,7 @@ export default function Feedback() {
       aria-labelledby="feedback-title"
     >
       <div className="max-w-6xl mx-auto px-6">
-        {/* Heading */}
+        {/* HEADING */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +62,7 @@ export default function Feedback() {
           </div>
         </motion.div>
 
-        {/* Feedback Cards */}
+        {/* FEEDBACK CARDS */}
         <div className="grid md:grid-cols-3 gap-8">
           {feedbacks.map((card, i) => (
             <motion.div
@@ -80,7 +79,7 @@ export default function Feedback() {
             >
               <p className="text-gray-600 italic mb-6">“{card.text}”</p>
 
-              {/* Rating Image */}
+              {/* RATING IMG */}
               <Image
                 src="/rating.png"
                 alt="rating"
@@ -91,7 +90,7 @@ export default function Feedback() {
                 className="mx-auto mb-4"
               />
 
-              {/* Avatar + Name */}
+              {/* AVATAR + NAME */}
               <div className="flex items-center gap-3 mt-4">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image

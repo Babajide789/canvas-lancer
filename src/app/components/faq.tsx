@@ -6,7 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-// Animation variants
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -23,7 +23,7 @@ const staggerContainer = {
   },
 };
 
-// FAQ data array
+
 const faqItems = [
   {
     question: "What services do you offer?",
@@ -50,7 +50,8 @@ const faqItems = [
 export default function FAQ() {
   return (
     <section className="FAQ max-w-3xl mx-auto py-16 px-4" id="faq">
-      {/* Heading */}
+
+      {/* FAQ SECTION */}
       <motion.div
         className="FAQ-top text-center mb-10"
         initial="hidden"
@@ -58,7 +59,7 @@ export default function FAQ() {
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        {/* Line + Text */}
+        
         <motion.div
           className="flex items-center justify-center gap-4 mb-6"
           variants={fadeUp}
@@ -78,7 +79,7 @@ export default function FAQ() {
         </motion.h2>
       </motion.div>
 
-      {/* Questions */}
+      {/* QUESTIONS SECTION */}
       <motion.div
         className="questions space-y-4"
         initial="hidden"

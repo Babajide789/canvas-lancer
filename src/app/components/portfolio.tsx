@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 
 export default function Portfolio() {
-  // Variants for animations
+  
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -23,7 +23,6 @@ export default function Portfolio() {
     },
   };
 
-  // ✅ Memoize filter buttons & portfolio images
   const filters = useMemo(
     () => ["All", "UI/UX", "Development", "Mobile Development", "SEO"],
     []
@@ -76,7 +75,7 @@ export default function Portfolio() {
         </motion.h2>
       </motion.div>
 
-      {/* FILTER BUTTONS */}
+
       <motion.div
         className="flex flex-wrap justify-center gap-4 mt-8"
         variants={staggerContainer}
@@ -95,7 +94,7 @@ export default function Portfolio() {
         ))}
       </motion.div>
 
-      {/* PORTFOLIO IMAGES GRID */}
+      {/* PORTFOLIO  SECTION*/}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[6px] sm:gap-[10px] md:gap-[5px] mt-12 px-2 sm:px-6 md:px-16"
         variants={staggerContainer}
@@ -121,8 +120,8 @@ export default function Portfolio() {
               alt={`Project ${i + 1}`}
               width={400}
               height={250}
-              priority={i === 0} // ✅ Load first image faster
-              loading={i === 0 ? "eager" : "lazy"} // ✅ Lazy-load others
+              priority={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
               className="rounded-md shadow-sm hover:scale-105 transition-transform duration-300 w-[90%] mx-auto object-cover"
             />
