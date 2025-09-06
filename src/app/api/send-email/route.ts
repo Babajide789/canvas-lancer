@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    // SEND REPLY TO USERS
+    // REPLY EMAIL TO USERS
     await resend.emails.send({
       from: "Canvas Lancer <onboarding@resend.dev>",
       to: email,
@@ -25,10 +25,10 @@ export async function POST(req: Request) {
       `,
     });
 
-    // 2️⃣ Send notification email to yourself
+    // 2️⃣ EMAIL NOTIF TO SELF
     await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: "your_email@example.com", // 👉 replace with your inbox
+      to: "your_email@example.com",
       subject: `New Contact from ${name}`,
       html: `
         <h3>New message from your portfolio</h3>
